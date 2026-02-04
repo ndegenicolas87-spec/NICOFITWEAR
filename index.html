@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicofit Wear | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link REL="stylesheet" href="toast.css">
+    
+</head>
+
+<body>
+    <!-- Navigation -->
+<header>
+<h2 class="logo">Welcome To Nicofit Wear</h2>
+<div id="home-greeting">
+  <div id="greet-text"></div>
+  <div id="greet-date"></div>
+</div>
+
+
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+                <li>
+  <a href="cart.html" class="cart-link">
+    Cart 
+  </a>
+</li>
+        <a href="track.html">Track Order</a>
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+    <!-- NAV SEARCH BAR (THE CORRECT ONE) -->
+    <form class="nav-search" action="products.html" method="get">
+        <input type="search" name="search" placeholder="Search products...">
+        <button type="submit">Search</button>
+    </form>
+</header>
+
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <img src="images/logo.png.jpg" class="banner-img" alt="NicoFit Banner">
+    </section>
+
+    <!-- Homepage Welcome Text -->
+    <section class="welcome">
+        <h1> NICOFIT WEAR</h1>
+        <p>Your Number 1 Store for Quality Sneakers, Clothes & Accessories</p>
+
+
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="categories">
+        <h2>Featured Categories</h2>
+
+        <div class="category-grid">
+
+            <div class="cat-card">
+                <img src="images/Sneaker.png.jpg" alt="Sneakers">
+                <p>Sneakers</p>
+            </div>
+
+            <div class="cat-card">
+                <img src="images/Shirt.png.jpg" alt="Clothes">
+                <p>Clothes</p>
+            </div>
+
+            <div class="cat-card">
+                <img src="images/Accessories.png.jpg" alt="Accessories">
+                <p>Accessories</p>
+            </div>
+
+        </div>
+    </section>
+    <!-- MOBILE NAVIGATION (BOTTOM BAR) -->
+<div class="mobile-nav">
+    <a href="index.html">
+        <span class="icon">🏠</span>
+        <span class="text">Home</span>
+    </a>
+
+    <a href="products.html">
+        <span class="icon">🛒</span>
+        <span class="text">Products</span>
+    </a>
+
+    <a href="tracking.html">
+        <span class="icon">📦</span>
+        <span class="text">Track</span>
+    </a>
+
+    <a href="cart.html">
+        <span class="icon">🛍</span>
+        <span class="text">Cart</span>
+    </a>
+
+    <a href="contact.html">
+        <span class="icon">📞</span>
+        <span class="text">Contact</span>
+    </a>
+</div>
+<script>
+function goSearch() {
+    let value = document.getElementById("navSearchInput").value;
+    if (value.trim() !== "") {
+        window.location.href = "products.html?search=" + encodeURIComponent(value);
+    }
+}
+</script>
+<div id="toast" class="toast"></div>
+<script src="toast.js"></script>
+
+<!-- Floating WhatsApp Help -->
+<div id="help-float">
+
+  <button id="helpBtn" aria-label="Chat on WhatsApp">
+    <span class="online-badge"></span>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      alt="WhatsApp"
+    >
+  </button>
+
+  <div id="helpBox">
+    <h4>Need Help?</h4>
+
+    <a href="https://wa.me/254781317499?text=Hello%20I%20need%20help%20with%20my%20order"
+       target="_blank">
+      💬 Chat on WhatsApp
+    </a>
+
+    <a href="mailto:ndegenicolus87@gmail.com">📧 Email Us</a>
+    <a href="tel:+254768337624">📞 Call Us</a>
+  </div>
+
+</div>
+<script>
+  const helpBtn = document.getElementById("helpBtn");
+  const helpBox = document.getElementById("helpBox");
+
+  // Toggle on click
+  helpBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    helpBox.classList.toggle("show");
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", function () {
+    helpBox.classList.remove("show");
+  });
+
+  // Auto open after 5 seconds
+  setTimeout(function () {
+    helpBox.classList.add("show");
+  }, 5000);
+</script>
+
+<script src="script.js"></script>
+<script src="scripts/greeting.js"></script>
+<!-- Theme Toggle Button -->
+<button id="themeToggle" aria-label="Toggle theme">
+  <span class="icon">🌙</span>
+</button>
+<script src="theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #1e3c72;
+    color: #fff;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.navbar ul li a.active,
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* TRACK PAGE */
+.track-container {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #1e3c72, #2a5298);
+}
+
+.track-card {
+    background: #fff;
+    width: 100%;
+    max-width: 420px;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.track-card h2 {
+    margin-bottom: 10px;
+    color: #1e3c72;
+}
+
+.track-card p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.track-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.track-card button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #1e3c72;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.track-card button:hover {
+    background: #16325c;
+}
+
+.status-box {
+    margin-top: 15px;
+    padding: 12px;
+    background: #f0f4ff;
+    border-radius: 6px;
+    color: #1e3c72;
+    font-weight: bold;
+}
+/* ===============================
+   Floating WhatsApp Help Button
+================================ */
+
+#help-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* WhatsApp button */
+#helpBtn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  animation: pulse 2s infinite;
+}
+
+/* WhatsApp icon */
+#helpBtn img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+  70%  { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* Online badge */
+.online-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 12px;
+  height: 12px;
+  background: #00ff6a;
+  border-radius: 50%;
+  border: 2px solid white;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Help popup box */
+#helpBox {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 220px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #333;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+  /* animation state */
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* show state */
+#helpBox.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+#helpBox h4 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+#helpBox a {
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+/* 🌙 Dark mode */
+@media (prefers-color-scheme: dark) {
+  #helpBox {
+    background: #1e1e1e;
+    color: #f1f1f1;
+  }
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  #helpBtn {
+    width: 55px;
+    height: 55px;
+  }
+
+  #helpBtn img {
+    width: 26px;
+    height: 26px;
+  }
+}

@@ -1,0 +1,383 @@
+/* =========================
+   GLOBAL
+========================= */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
+
+/* =========================
+   NAV BAR (FIXED)
+========================= */
+.main-header {
+  background: #0d6efd;
+  padding: 12px 0;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.brand {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  text-decoration: underline;
+}
+
+/* MOBILE NAV */
+@media (max-width: 600px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* =========================
+   CART LAYOUT
+========================= */
+.cart-wrapper {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.cart-wrapper h2 {
+  margin-bottom: 20px;
+}
+
+/* CART ITEM */
+.cart-item {
+  display: flex;
+  gap: 15px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.cart-item img {
+  width: 90px;
+  border-radius: 8px;
+}
+
+.cart-item h4 {
+  margin: 0;
+}
+
+.cart-item p {
+  margin: 6px 0;
+  color: #555;
+}
+
+.cart-item button {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* =========================
+   SUMMARY / CHECKOUT
+========================= */
+.cart-summary {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.total {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* PHONE INPUT */
+.checkout-box label {
+  font-size: 14px;
+  color: #333;
+}
+
+.checkout-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+/* =========================
+   M-PESA BUTTON (ANIMATED)
+========================= */
+.mpesa-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #00c853, #009624);
+  color: white;
+  cursor: pointer;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+/* =========================
+   MOBILE CART
+========================= */
+@media (max-width: 600px) {
+  .cart-item {
+    flex-direction: column;
+  }
+
+  .cart-item img {
+    width: 100%;
+  }
+}
+/* CART COUNT BADGE */
+.cart-link {
+  position: relative;
+}
+
+#cart-count {
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 7px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+.cart-item {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item img {
+  width: 80px;
+  border-radius: 6px;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qty button {
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.remove {
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+/* ===============================
+   ORDER TOAST NOTIFICATION
+================================ */
+
+.order-toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  max-width: 350px;
+  width: 90%;
+  background: #1f2933;
+  color: #ffffff;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease;
+  z-index: 9999;
+}
+
+.order-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-content {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* ✅ Mobile (phones) */
+@media (max-width: 480px) {
+  .order-toast {
+    right: 10px;
+    left: 10px;
+    bottom: 15px;
+    max-width: none;
+  }
+}
+
+/* ✅ Tablet */
+@media (max-width: 768px) {
+  .order-toast {
+    bottom: 18px;
+  }
+}
+/* ===============================
+   Floating WhatsApp Help Button
+================================ */
+
+#help-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* WhatsApp button */
+#helpBtn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  animation: pulse 2s infinite;
+}
+
+/* WhatsApp icon */
+#helpBtn img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+  70%  { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* Online badge */
+.online-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 12px;
+  height: 12px;
+  background: #00ff6a;
+  border-radius: 50%;
+  border: 2px solid white;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Help popup box */
+#helpBox {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 220px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #333;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+  /* animation state */
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* show state */
+#helpBox.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+#helpBox h4 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+#helpBox a {
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+/* 🌙 Dark mode */
+@media (prefers-color-scheme: dark) {
+  #helpBox {
+    background: #1e1e1e;
+    color: #f1f1f1;
+  }
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  #helpBtn {
+    width: 55px;
+    height: 55px;
+  }
+
+  #helpBtn img {
+    width: 26px;
+    height: 26px;
+  }
+}

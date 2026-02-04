@@ -1,0 +1,380 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.main-header {
+  background: #1f6fd2;
+  padding: 14px 30px;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a.active {
+  border-bottom: 2px solid #00e676;
+}
+
+/* CONTACT LAYOUT */
+.contact-wrapper {
+  max-width: 1200px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.contact-card,
+.message-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* LEFT CARD */
+.subtitle {
+  margin: 10px 0 20px;
+  color: #555;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.role {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.whatsapp {
+  background: #25d366;
+}
+
+.call {
+  background: #1f6fd2;
+}
+
+/* MPESA */
+.mpesa-box {
+  margin-top: 20px;
+  background: #e8f5e9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.mpesa-box h4 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.mpesa-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.mpesa-row button {
+  background: #1f6fd2;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bank {
+  font-size: 13px;
+  color: #444;
+}
+
+/* FORM */
+.message-card input,
+.message-card textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.message-card textarea {
+  height: 100px;
+}
+
+.message-card button {
+  width: 100%;
+  padding: 10px;
+  background: #1f6fd2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+/* TOAST NOTIFICATION */
+.toast-notification {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #323232;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.toast-notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cart-title {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.cart-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.cart-item img {
+  width: 80px;
+  margin-right: 15px;
+  border-radius: 5px;
+}
+
+.cart-summary {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.cart-summary input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+#payBtn {
+  background: #0f9d58;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+/* ===============================
+   Floating WhatsApp Help Button
+================================ */
+
+#help-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* WhatsApp button */
+#helpBtn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  animation: pulse 2s infinite;
+}
+
+/* WhatsApp icon */
+#helpBtn img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+  70%  { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* Online badge */
+.online-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 12px;
+  height: 12px;
+  background: #00ff6a;
+  border-radius: 50%;
+  border: 2px solid white;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Help popup box */
+#helpBox {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 220px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #333;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+  /* animation state */
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* show state */
+#helpBox.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+#helpBox h4 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+#helpBox a {
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+/* 🌙 Dark mode */
+@media (prefers-color-scheme: dark) {
+  #helpBox {
+    background: #1e1e1e;
+    color: #f1f1f1;
+  }
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  #helpBtn {
+    width: 55px;
+    height: 55px;
+  }
+
+  #helpBtn img {
+    width: 26px;
+    height: 26px;
+  }
+}
+/* THEME VARIABLES */
+:root {
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --text: #222;
+  --primary: #2563eb;
+}
+
+body.dark {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #e5e7eb;
+  --primary: #3b82f6;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Toggle button */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 12px;
+  color: white;
+}

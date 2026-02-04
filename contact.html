@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us | Nicofit Wear</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+<!-- NAVIGATION BAR -->
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="brand">Nicofit Wear</div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+            <li>
+  <a href="cart.html" class="cart-link">
+    Cart 
+  </a>
+</li>
+      <li><a href="track.html">Track Order</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- CONTACT SECTION -->
+<main class="contact-wrapper">
+
+  <!-- LEFT CARD -->
+  <section class="contact-card">
+    <h2>Contact Us</h2>
+    <p class="subtitle">We are ready to serve you. Reach out anytime.</p>
+
+    <img src="images/ceo.jpeg" alt="CEO Photo" class="profile-img">
+
+    <h3>Nicolus Ndege</h3>
+    <p class="role">Founder & CEO – Nicofit Wear</p>
+
+    <a class="btn whatsapp" href="https://wa.me/254781317499" target="_blank">
+      💬 Chat on WhatsApp
+    </a>
+
+    <a class="btn call" href="tel:+254768337624">
+      📞 Call Now
+    </a>
+
+    <!-- MPESA -->
+    <div class="mpesa-box">
+      <h4>LIPA NA MPESA</h4>
+
+      <div class="mpesa-row">
+        <span>Paybill Number:</span>
+        <strong id="paybill">522522</strong>
+        <button onclick="copyText('paybill')">Copy</button>
+      </div>
+
+      <div class="mpesa-row">
+        <span>Account Number:</span>
+        <strong id="account">1337100129</strong>
+        <button onclick="copyText('account')">Copy</button>
+      </div>
+
+      <p class="bank">KCB BANK</p>
+    </div>
+  </section>
+
+  <!-- RIGHT CARD -->
+  <section class="message-card">
+    <h2>Send Us a Message</h2>
+
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+</main>
+
+<script src="contact.js"></script>
+<!-- Floating WhatsApp Help -->
+<div id="help-float">
+
+  <button id="helpBtn" aria-label="Chat on WhatsApp">
+    <span class="online-badge"></span>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      alt="WhatsApp"
+    >
+  </button>
+
+  <div id="helpBox">
+    <h4>Need Help?</h4>
+
+    <a href="https://wa.me/254781317499?text=Hello%20I%20need%20help%20with%20my%20order"
+       target="_blank">
+      💬 Chat on WhatsApp
+    </a>
+
+    <a href="mailto:ndegenicolus87@gmail.com">📧 Email Us</a>
+    <a href="tel:+254768337624">📞 Call Us</a>
+  </div>
+<script>
+  const helpBtn = document.getElementById("helpBtn");
+  const helpBox = document.getElementById("helpBox");
+
+  // Toggle on click
+  helpBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    helpBox.classList.toggle("show");
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", function () {
+    helpBox.classList.remove("show");
+  });
+
+  // Auto open after 5 seconds
+  setTimeout(function () {
+    helpBox.classList.add("show");
+  }, 5000);
+</script>
+</div>
+<button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+  🌙
+</button>
+<script src="theme.js"></script>
+</body>
+</html>
